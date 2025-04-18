@@ -17,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/kyuvarajog/Demand-Spot/issues"
   },
-  "homepage": "https://github.com/kyuvarajog/Demand-Spot#readme"
+  "homepage": "https://github.com/kyuvarajog/Demand-Spot#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "sqlite3": "^5.1.7"
+  }
 }
