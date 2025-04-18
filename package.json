@@ -1,8 +1,8 @@
 {
   "name": "demand-spot",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "description": "Build a fully functional website for a platform called \"DemandSpot\" (you can replace this name with the final one). The platform connects aspiring entrepreneurs with low to medium investment (like $800–$1500 or ₹50,000–₹1,50,000) to hyperlocal business opportunities based on real-time local demand data collected from people in specific areas.",
+  "main": "db.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -19,7 +19,9 @@
   },
   "homepage": "https://github.com/kyuvarajog/Demand-Spot#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^5.1.0",
+    "multer": "^1.4.5-lts.2",
     "sqlite3": "^5.1.7"
   }
 }

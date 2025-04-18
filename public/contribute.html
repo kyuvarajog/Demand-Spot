@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contribute Idea — DemandSpot</title>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #0f0f0f;
+      overflow-x: hidden;
+      color: #ffffff;
+    }
+
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .form-container {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .glass-form {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 1.5rem;
+      padding: 3rem;
+      width: 100%;
+      max-width: 500px;
+      box-shadow: 0 0 40px rgba(0, 255, 174, 0.1);
+      margin-top: 1.5rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #00ffae;
+    }
+
+    .tagline {
+      font-size: 1.2rem;
+      color: #ccc;
+      margin-bottom: 2rem;
+    }
+
+    .glass-form label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+      color: #eeeeee;
+      text-align: left;
+    }
+
+    .glass-form input, .glass-form textarea {
+      width: 100%;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      border: none;
+      border-radius: 0.75rem;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    .glass-form button {
+      width: 100%;
+      padding: 1rem;
+      border: none;
+      border-radius: 0.75rem;
+      background: #00ffae;
+      color: #000;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .glass-form button:hover {
+      background: #00e8a0;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 255, 174, 0.4);
+    }
+
+    #contribMessage {
+      margin-top: 1rem;
+      color: #00ffae;
+      font-weight: 500;
+    }
+    h1 a {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2rem;
+      letter-spacing: 2px;
+      color: white;
+      text-decoration: none;
+    }
+    h1 a:hover {
+        color: #00ffae;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 3rem;
+      background-color: #111;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+      z-index: 10;
+    }
+    nav ul {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+  
+    nav ul li a {
+      color: #ccc;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+  
+    nav ul li a:hover {
+      color: #00ffae;
+    }
+  
+  </style>
+</head>
+<body>
+    <header>
+        <h1><a href="index.html">DemandSpot</a></h1>
+        <nav>
+          <ul>
+            <li><a href="get-started.html">For Starters</a></li>
+            <li><a href="contribute.html">For Contributors</a></li>
+          </ul>
+        </nav>
+      </header>
+<div id="particles-js"></div>
+
+<section class="form-container">
+  <h1>Contribute Your Idea</h1>
+  <p class="tagline">Your local insight might just spark the next big thing! 💡</p>
+
+  <form id="contributorForm" class="glass-form">
+    <label for="idea">Business Idea</label>
+    <input type="text" id="idea" name="idea" placeholder="e.g. Mobile car wash" required />
+
+    <label for="location">Location</label>
+    <input type="text" id="location" name="location" placeholder="e.g. Pune" required />
+
+    <label for="min_budget">Minimum Budget</label>
+    <input type="number" id="min_budget" name="min_budget" placeholder="e.g. 10000" required />
+
+    <label for="max_budget">Maximum Budget</label>
+    <input type="number" id="max_budget" name="max_budget" placeholder="e.g. 50000" required />
+
+    <button type="submit">Submit Idea</button>
+    <div id="contribMessage"></div>
+  </form>
+</section>
+
+<!-- Particle background config -->
+<script>
+  particlesJS("particles-js", {
+    "particles": {
+      "number": { "value": 80 },
+      "color": { "value": "#00ffae" },
+      "shape": { "type": "circle" },
+      "opacity": {
+        "value": 0.3,
+        "random": true
+      },
+      "size": {
+        "value": 4,
+        "random": true
+      },
+      "line_linked": {
+        "enable": true,
+        "distance": 150,
+        "color": "#00ffae",
+        "opacity": 0.2,
+        "width": 1
+      },
+      "move": {
+        "enable": true,
+        "speed": 2
+      }
+    },
+    "interactivity": {
+      "detect_on": "canvas",
+      "events": {
+        "onhover": { "enable": true, "mode": "repulse" }
+      }
+    },
+    "retina_detect": true
+  });
+
+  // Handle contributor form submit
+  document.getElementById('contributorForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const form = new FormData(e.target);
+
+    const res = await fetch('/api/submit', {
+      method: 'POST',
+      body: form
+    });
+
+    const msg = await res.text();
+    document.getElementById('contribMessage').textContent = msg;
+    e.target.reset();
+  });
+</script>
+
+</body>
+</html>

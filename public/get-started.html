@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Get Started — DemandSpot</title>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <style>
+     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Inter:wght@400;600&display=swap');
+  
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #0f0f0f;
+      overflow-x: hidden;
+      color: #ffffff;
+    }
+
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .form-container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 4rem 2rem;
+    }
+
+    .glass-form {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 1.5rem;
+      padding: 3rem;
+      width: 100%;
+      max-width: 450px;
+      box-shadow: 0 0 40px rgba(0, 255, 174, 0.1);
+      margin-bottom: 2rem;
+    }
+
+    .glass-form h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      color: #00ffae;
+    }
+
+    .glass-form label {
+      display: block;
+      margin-bottom: 0.75rem;
+      font-size: 1rem;
+      color: #eeeeee;
+    }
+
+    .glass-form input {
+      width: 100%;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      border: none;
+      border-radius: 0.75rem;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      outline: none;
+    }
+
+    .glass-form input:focus {
+      box-shadow: 0 0 10px #00ffae;
+      background-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .glass-form button {
+      width: 100%;
+      padding: 1rem;
+      border: none;
+      border-radius: 0.75rem;
+      background: #00ffae;
+      color: #000;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .glass-form button:hover {
+      background: #00e8a0;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 255, 174, 0.4);
+    }
+
+    #ideasContainer {
+      width: 100%;
+      max-width: 1000px;
+      margin-top: 2rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 1rem;
+      padding: 2rem;
+      backdrop-filter: blur(10px);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      color: white;
+    }
+
+    th, td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    th {
+      background-color: rgba(0, 255, 174, 0.1);
+      color: #00ffae;
+    }
+
+    tr:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    .like-btn {
+      background-color: #00ffae;
+      color: #000;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: background 0.3s ease;
+    }
+
+    .like-btn:disabled {
+      background: #444;
+      cursor: default;
+      color: #999;
+    }
+
+    .like-btn:hover:not(:disabled) {
+      background-color: #00e8a0;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 3rem;
+      background-color: #111;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+      z-index: 10;
+    }
+  
+    h1 a {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2rem;
+      letter-spacing: 2px;
+      color: white;
+      text-decoration: none;
+    }
+    h1 a:hover {
+        color: #00ffae;
+    }
+    nav ul {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+  
+    nav ul li a {
+      color: #ccc;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+  
+    nav ul li a:hover {
+      color: #00ffae;
+    }
+  
+  </style>
+</head>
+<body>
+    <header>
+        <h1><a href="index.html">DemandSpot</a></h1>
+        <nav>
+          <ul>
+            <li><a href="get-started.html">For Starters</a></li>
+            <li><a href="contribute.html">For Contributors</a></li>
+          </ul>
+        </nav>
+      </header>
+<div id="particles-js"></div>
+
+<section class="form-container">
+    <form id="starterForm" class="glass-form">
+      <h2>Get Business Ideas</h2>
+      <label for="budget">Enter your budget ($ or ₹):</label>
+      <input type="number" id="budget" name="budget" placeholder="e.g. 50000" required />
+      <button type="submit">Get Ideas</button>
+    </form>
+  
+    <!-- 🎯 Catchy Contribution Call -->
+    <div style="margin-top: 1.5rem; text-align: center;">
+      <p style="font-size: 1.2rem; color: #ccc; margin-bottom: 0.75rem;">
+        Got better ideas? <strong style="color: #00ffae;">Share them with the world!</strong>
+      </p>
+      <a href="/contribute.html">
+        <button style="
+          background: #00ffae;
+          color: #000;
+          padding: 0.75rem 1.5rem;
+          font-size: 1rem;
+          font-weight: 600;
+          border: none;
+          border-radius: 0.75rem;
+          cursor: pointer;
+          transition: 0.3s ease;
+        ">
+          Contribute an Idea
+        </button>
+      </a>
+    </div>
+  
+    <div id="ideasContainer" style="display: none;"></div>
+  </section>
+  
+
+<script>
+  particlesJS("particles-js", {
+    "particles": {
+      "number": { "value": 80 },
+      "color": { "value": "#00ffae" },
+      "shape": { "type": "circle" },
+      "opacity": {
+        "value": 0.3,
+        "random": true
+      },
+      "size": {
+        "value": 4,
+        "random": true
+      },
+      "line_linked": {
+        "enable": true,
+        "distance": 150,
+        "color": "#00ffae",
+        "opacity": 0.2,
+        "width": 1
+      },
+      "move": {
+        "enable": true,
+        "speed": 2
+      }
+    },
+    "interactivity": {
+      "detect_on": "canvas",
+      "events": {
+        "onhover": { "enable": true, "mode": "repulse" }
+      }
+    },
+    "retina_detect": true
+  });
+
+  document.getElementById('starterForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const budget = document.getElementById('budget').value;
+
+    const res = await fetch('/api/ideas?budget=' + budget);
+    const ideas = await res.json();
+
+    const container = document.getElementById('ideasContainer');
+    container.innerHTML = '';
+
+    if (ideas.length === 0) {
+      container.innerHTML = '<p>No ideas found for this budget range.</p>';
+    } else {
+      let table = `
+        <table>
+          <thead>
+            <tr>
+              <th>S.No</th>
+              <th>Idea Name</th>
+              <th>Min Budget</th>
+              <th>Max Budget</th>
+              <th>Location</th>
+              <th>Upvote</th>
+            </tr>
+          </thead>
+          <tbody>
+      `;
+
+      ideas.forEach((idea, index) => {
+        const liked = localStorage.getItem('liked_' + idea.id);
+        table += `
+          <tr>
+            <td>${index + 1}</td>
+            <td>${idea.idea}</td>
+            <td>${idea.min_budget}</td>
+            <td>${idea.max_budget}</td>
+            <td>${idea.location}</td>
+            <td>
+              <button class="like-btn" data-id="${idea.id}" ${liked ? 'disabled' : ''}>
+                👍 <span>${idea.likes}</span>
+              </button>
+            </td>
+          </tr>
+        `;
+      });
+
+      table += `</tbody></table>`;
+      container.innerHTML = table;
+    }
+
+    container.style.display = 'block';
+    container.scrollIntoView({ behavior: 'smooth' });
+
+    document.querySelectorAll('.like-btn').forEach(btn => {
+      btn.addEventListener('click', async function () {
+        const id = this.dataset.id;
+
+        if (localStorage.getItem('liked_' + id)) return;
+
+        const res = await fetch('/api/uplift/' + id, { method: 'POST' });
+        const data = await res.json();
+
+        this.querySelector('span').textContent = data.likes;
+        this.disabled = true;
+        localStorage.setItem('liked_' + id, 'true');
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
