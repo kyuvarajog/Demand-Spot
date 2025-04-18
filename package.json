@@ -1,0 +1,21 @@
+{
+  "name": "demand-spot",
+  "version": "1.0.0",
+  "description": "Build a fully functional website for a platform called \"DemandSpot\" (you can replace this name with the final one). The platform connects aspiring entrepreneurs with low to medium investment (like $800–$1500 or ₹50,000–₹1,50,000) to hyperlocal business opportunities based on real-time local demand data collected from people in specific areas.",
+  "main": "db.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kyuvarajog/Demand-Spot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kyuvarajog/Demand-Spot/issues"
+  },
+  "homepage": "https://github.com/kyuvarajog/Demand-Spot#readme"
+}
